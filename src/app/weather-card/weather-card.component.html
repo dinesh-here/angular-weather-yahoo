@@ -1,0 +1,11 @@
+
+   <div class="weather-forcast-wrap">
+<div *ngFor="let weather of weatherItems" class="weather-card">
+  <h4 class="inlineBlock left">{{weather.date}}</h4>
+    <span class="icon-medium-text pad-v-15" [innerHTML]="weather.text | weather">
+    </span>
+    <div>
+      <h3  class="large-text">{{weather.high}}&deg;F</h3>
+    </div>
+</div>
+</div>

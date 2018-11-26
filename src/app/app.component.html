@@ -1,0 +1,20 @@
+<div class="header-container">
+  <input class="search" type="text" placeholder="Search city..." (keypress)="handleSearch($event)">
+  <!-- <a [routerLink]="['/about']">About</a> -->
+</div>
+<div class="main-workspace">
+    <div class="weather-container clearfix" *ngIf="weatherData; else nodata">
+      <h2 class="center">{{weatherData.title}}</h2>
+      <div class="weather-right right">
+        <h3  class="center extra-large-text">{{weatherData.condition.temp}}&deg;F</h3>
+      </div>
+      <div class="weather-left left center">
+        <span class="center icon-large-text" [innerHTML]="weatherData.condition.text | weather">
+          </span>
+        <h4  class="center large-text mar-top-10">{{weatherData.condition.text}}</h4>
+      </div>
+    </div>
+      <app-weather-card *ngIf="weatherData" [weatherItems]="weatherData.forecast"></app-weather-card>
+    </div>
+<ng-template #nodata>
+  <ng-container *ngIf="isAPIFailed"> <h3 class="center">No city found... :(</h3></ng-container></ng-template>

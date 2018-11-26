@@ -1,0 +1,23 @@
+.weather-card{
+  display:flex;
+  position: relative;
+  align-items:center;
+  padding-right: 50px;
+      padding: 10px 50px 10px 11px;
+          user-select: none;
+    cursor: pointer;
+}
+.weather-card:last-child::after{
+  display: none;
+}
+.weather-card::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 80%;
+  width: 1px;
+  background: #e0dbdb;
+  right: 15px;
+  margin: auto;
+}
